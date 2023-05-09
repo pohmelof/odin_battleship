@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+i {
+    pointer-events: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30%;
+}
+
+.gameboard-player,
+.gameboard-computer{
+    width: 40%;
+}
+.gameboard-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.game-board {
+    aspect-ratio: 1/1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid gray;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(92, 92, 92, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.overlay h1 {
+    color: white;
+    max-width: 500px;
+    text-align: center;
+    text-shadow: -2px 2px 3px black;
+}
+.overlay button {
+    border: 3px solid rgb(65, 64, 64);
+    color:rgb(65, 64, 64)
+}
+
+
+@media (max-width: 550px) {
+    .gameboard-container {
+        flex-direction: column;
+        
+    }
+    .gameboard-player,
+    .gameboard-computer{
+    width: 100%;
+    }
+    .button-container {
+        flex-direction: row;
+        margin: 1rem 0;
+    }
+}
+
+.block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: calc((75vw - 4.5rem) / 18);
+    user-select: none;
+    outline: 1px solid gray;
+    background-color: aliceblue;
+}
+.miss::before {
+    content: '';
+    width: 25%;
+    height: 25%;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.hit::before,
+.hit::after {
+    position: absolute;
+    content: '';
+    width: 80%;
+    height: 10%;
+    background-color: black;
+}
+
+.hit::before {
+    transform: rotate(45deg);
+}
+.hit::after{
+    transform: rotate(-45deg);
+}
+
+#computer .block:hover {
+    /* background-color: aqua; */
+    background-color: lightgray;
+}
+.dragover {
+    background-color: darkblue;
+}
+
+.option-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    aspect-ratio: 1 / 1;
+    background-color: aliceblue;
+    border: 2px solid lightskyblue;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid;
+    border-radius: .4rem;
+    cursor: pointer;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.destroyer {
+    background-color: lightcoral;
+}
+.submarine {
+    background-color: lightgreen;
+}
+.cruiser {
+    background-color: goldenrod;
+}
+.battleship {
+    background-color: plum;
+}
+.carrier {
+    background-color: cornflowerblue;
+}
+
+.ship {
+    height: 20px;
+    display: flex;
+}
+.ship:hover {
+    opacity: 0.9;
+}
+
+.destroyer-preview {
+    aspect-ratio: 2/1;
+}
+.submarine-preview {
+    aspect-ratio: 3/1;
+}
+.cruiser-preview {
+    aspect-ratio: 3/1;
+}
+.battleship-preview {
+    aspect-ratio: 4/1;
+}
+.carrier-preview {
+    aspect-ratio: 5/1;
+}
+
+.hidden {
+    display: none;
+}
+
+.trace-move::after,
+.trace-move::before{
+    background-color: red;
+}

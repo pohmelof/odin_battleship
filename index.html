@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cc768ea391.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="gameboard-container">
+            <div class="gameboard-player"></div>
+            <div class="button-container">
+                <button class="btn btn-startgame">Start</button>
+                <button class="btn btn-rotate"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+            <div class="gameboard-computer"></div>
+        </div>
+    </div>
+    <div class="overlay hidden">
+        <div class="message"></div>
+        <button class="btn btn-close">close</button>
+        <button class="btn btn-reset hidden">play again</button>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
